@@ -1,6 +1,5 @@
 const copyAndPush = (arr) => {
-    const cloneArr = [...arr];
-    cloneArr.push(4);
+    const cloneArr = [...arr, 4];
     return cloneArr;
 };
 
