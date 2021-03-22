@@ -1,12 +1,7 @@
 const copyAndFilter = (arr) => {
-    const newArr = [];
-    arr.map(element => {
-        const capEle = element.toUpperCase();
-        if (capEle.startsWith('F')) {
-            newArr.push();
-        } else newArr.push(capEle);
-    });
-    return newArr;
+    const newArr = arr.map(e => e.toUpperCase());
+    const filtArr = newArr.filter(e => !e.startsWith('F'));
+    return filtArr;
 };
 
 module.exports = copyAndFilter;
