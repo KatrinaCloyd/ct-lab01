@@ -1,6 +1,7 @@
 const map = require('./map');
 const filter = require('./filter');
 const findIndex = require('./findIndex');
+const reduce = require('./reduce');
 
 describe('map function', () => {
     it('maps over array uses given callback and returns new array of same length', () => {
@@ -26,5 +27,13 @@ describe('find index function', () => {
         expect(secondArr).toEqual(2);
         expect(thirdArr).toEqual(-1);
     });
+});
 
+describe('reduce function', () => {
+    it('reduces an array uses given callback and returns new array of truthy elements', () => {
+        const newArr = reduce([2, 3, 4], (acc, n) => acc + n);
+        const secondArr = reduce([2, 3, 4], (acc, n) => acc + n, 5);
+        expect(newArr).toEqual(9);
+        expect(secondArr).toEqual(14);
+    });
 });
