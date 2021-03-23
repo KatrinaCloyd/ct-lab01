@@ -2,6 +2,7 @@ const map = require('./map');
 const filter = require('./filter');
 const findIndex = require('./findIndex');
 const reduce = require('./reduce');
+const every = require('./every');
 
 describe('map function', () => {
     it('maps over array uses given callback and returns new array of same length', () => {
@@ -35,5 +36,16 @@ describe('reduce function', () => {
         const secondArr = reduce([2, 3, 4], (acc, n) => acc + n, 5);
         expect(newArr).toEqual(9);
         expect(secondArr).toEqual(14);
+    });
+});
+
+describe('every function', () => {
+    it('returns true if all elements are true, or false if any one element is false', () => {
+        const newArr = every([2, 3, 4], (n) => n % 2 === 0);
+        const secondArr = every([7, 3, 9, 1], (n) => n % 2 === 0);
+        const thirdArr = every([2, 4, 5, 6], (n) => n % 2 === 0);
+        expect(newArr).toEqual(false);
+        expect(secondArr).toEqual(false);
+        expect(thirdArr).toEqual(true);
     });
 });
