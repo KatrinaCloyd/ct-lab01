@@ -43,7 +43,7 @@ describe('every function', () => {
     it('returns true if all elements are true, or false if any one element is false', () => {
         const newArr = every([2, 3, 4], (n) => n % 2 === 0);
         const secondArr = every([7, 3, 9, 1], (n) => n % 2 === 0);
-        const thirdArr = every([2, 4, 5, 6], (n) => n % 2 === 0);
+        const thirdArr = every([2, 4, 6, 8], (n) => n % 2 === 0);
         expect(newArr).toEqual(false);
         expect(secondArr).toEqual(false);
         expect(thirdArr).toEqual(true);
