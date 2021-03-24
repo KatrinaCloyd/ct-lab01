@@ -1,5 +1,3 @@
-const getName = () => {
-    return 'blah';
-};
+const getName = ({ name }) => name;
 
 module.exports = getName;
