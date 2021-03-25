@@ -54,7 +54,7 @@ describe('every function', () => {
 describe('every function', () => {
     it('returns true if all elements are true, or false if any one element is false', () => {
         const mockCallback = jest.fn(n => n * 2);
-        forEach([2, 3, 4], mockCallback);
-        expect(mockCallback).toHaveBeenCalledTimes(3);
+        forEach([2, 3], mockCallback);
+        expect(mockCallback).toHaveBeenCalledTimes(2);
     });
 });
