@@ -51,10 +51,17 @@ describe('every function', () => {
     });
 });
 
-describe('every function', () => {
-    it('returns true if all elements are true, or false if any one element is false', () => {
+describe('for each function', () => {
+    it('calls the function for each element in the array', () => {
         const mockCallback = jest.fn(n => n * 2);
         forEach([2, 3], mockCallback);
         expect(mockCallback).toHaveBeenCalledTimes(2);
+    });
+});
+
+describe('index functionality', () => {
+    it('tests index functionality for the filter method - dont really get what this is testing...', () => {
+        const newArr = map([2, 3, 4], (n, index) => n + 2);
+        expect(newArr).toEqual([4, 5, 6]);
     });
 });
