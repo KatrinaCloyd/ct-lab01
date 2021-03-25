@@ -3,6 +3,7 @@ const filter = require('./filter');
 const findIndex = require('./findIndex');
 const reduce = require('./reduce');
 const every = require('./every');
+const forEach = require('./forEach');
 
 describe('map function', () => {
     it('maps over array uses given callback and returns new array of same length', () => {
@@ -47,5 +48,13 @@ describe('every function', () => {
         expect(newArr).toEqual(false);
         expect(secondArr).toEqual(false);
         expect(thirdArr).toEqual(true);
+    });
+});
+
+describe('every function', () => {
+    it('returns true if all elements are true, or false if any one element is false', () => {
+        const mockCallback = jest.fn(n => n * 2);
+        forEach([2, 3, 4], mockCallback);
+        expect(mockCallback).toHaveBeenCalledTimes(3);
     });
 });
